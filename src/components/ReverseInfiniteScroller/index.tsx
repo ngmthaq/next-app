@@ -87,7 +87,6 @@ const ReverseInfiniteScroller: FC<ReverseInfiniteScrollerProps> = (props) => {
             className={ITEM_CLASSNAME}
             style={{ minHeight: item.estimateSize + "px" }}
           >
-            <span>{index + 1}</span>
             <ItemComponent {...item.props} />
           </div>
         ))}
