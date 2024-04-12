@@ -1,7 +1,7 @@
 import { InferGetServerSidePropsType } from "next";
 import { FC, ReactNode, useState } from "react";
 import BaseLayout from "@/layouts/BaseLayout";
-import InfiniteScroller from "@/components/InfiniteScroller";
+import ReverseInfiniteScroller from "@/components/ReverseInfiniteScroller";
 import { randomId } from "@/utils/str";
 import { getServerSideProps } from "./props";
 
@@ -13,12 +13,15 @@ export const Page: FC<PageProps> = (props) => {
   const [data, setData] = useState(infiniteScrollerData);
 
   const handleLoadMore = () => {
-    setData((state) => [...state, ...infiniteScrollerData]);
+    setData((state) => [
+      ...state,
+      ...infiniteScrollerData.map((d) => ({ ...d, id: randomId() })),
+    ]);
   };
 
   return (
     <BaseLayout title="Next App">
-      <InfiniteScroller
+      <ReverseInfiniteScroller
         items={data}
         width="200px"
         height="200px"
