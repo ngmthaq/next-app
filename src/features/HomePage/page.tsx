@@ -11,6 +11,9 @@ export const Page: FC<
       <p>Hello</p>
       <p>{repo.message}</p>
       <p>{repo.documentation_url}</p>
+      <p>
+        <i className="bi bi-0-circle"></i>
+      </p>
     </BaseLayout>
   );
 };
