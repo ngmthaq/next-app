@@ -47,7 +47,6 @@ const ReverseInfiniteScroller: FC<ReverseInfiniteScrollerProps> = (props) => {
 
   useEffect(() => {
     containerRef.current?.addEventListener("scroll", handleScroll);
-
     return () => {
       containerRef.current?.removeEventListener("scroll", handleScroll);
     };
@@ -57,10 +56,9 @@ const ReverseInfiniteScroller: FC<ReverseInfiniteScrollerProps> = (props) => {
     if (containerRef.current && isFirstRender) {
       containerRef.current.scrollTop = containerRef.current.scrollHeight;
     } else if (containerRef.current) {
-      containerRef.current.scrollTop =
-        containerRef.current.scrollHeight - prevScrollHeight.current;
+      containerRef.current.scrollTop = containerRef.current.scrollHeight - prevScrollHeight.current;
     }
-  }, [items]);
+  }, [items, isFirstRender]);
 
   return (
     <div

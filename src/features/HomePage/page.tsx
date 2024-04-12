@@ -13,10 +13,7 @@ export const Page: FC<PageProps> = (props) => {
   const [data, setData] = useState(infiniteScrollerData);
 
   const handleLoadMore = () => {
-    setData((state) => [
-      ...state,
-      ...infiniteScrollerData.map((d) => ({ ...d, id: randomId() })),
-    ]);
+    setData((state) => [...state, ...infiniteScrollerData.map((d) => ({ ...d, id: randomId() }))]);
   };
 
   return (

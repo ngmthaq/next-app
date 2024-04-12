@@ -23,7 +23,7 @@ export function useVisible(element: HTMLElement, root: HTMLElement) {
           root: root,
           rootMargin: "0px 0px 0px 0px",
           threshold: 0,
-        }
+        },
       );
 
       observer.current.observe(element);

@@ -46,7 +46,6 @@ const InfiniteScroller: FC<InfiniteScrollerProps> = (props) => {
 
   useEffect(() => {
     containerRef.current?.addEventListener("scroll", handleScroll);
-
     return () => {
       containerRef.current?.removeEventListener("scroll", handleScroll);
     };
@@ -59,10 +58,7 @@ const InfiniteScroller: FC<InfiniteScrollerProps> = (props) => {
       className={className || ""}
       style={{ width: width, height: height, overflowY: "scroll" }}
     >
-      <div
-        className={WRAPPER_CLASSNAME}
-        style={{ width: "100%", minHeight: wrapperHeight + "px" }}
-      >
+      <div className={WRAPPER_CLASSNAME} style={{ width: "100%", minHeight: wrapperHeight + "px" }}>
         {items.map((item, index) => (
           <div
             key={item.id}
