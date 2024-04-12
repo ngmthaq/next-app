@@ -1,5 +1,5 @@
 import { getServerSideProps } from "@/features/HomePage/props";
-import { Page as HomePage } from "@/features/HomePage/page";
+import { Page } from "@/features/HomePage/page";
 
 export { getServerSideProps };
-export default HomePage;
+export default Page;

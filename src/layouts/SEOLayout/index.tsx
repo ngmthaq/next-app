@@ -2,7 +2,7 @@ import Head from "next/head";
 import { FC, Fragment, ReactNode } from "react";
 import NoSSR from "@/components/NoSSR";
 
-export type BaseLayoutProps = {
+export type SEOLayoutProps = {
   children: ReactNode;
   title: string;
   description?: string;
@@ -12,7 +12,7 @@ export type BaseLayoutProps = {
   url?: string;
 };
 
-const BaseLayout: FC<BaseLayoutProps> = (props) => {
+const SEOLayout: FC<SEOLayoutProps> = (props) => {
   const { children, title, description, image, author, keywords, url } = props;
 
   return (
@@ -79,4 +79,4 @@ const BaseLayout: FC<BaseLayoutProps> = (props) => {
   );
 };
 
-export default BaseLayout;
+export default SEOLayout;

@@ -83,7 +83,7 @@ const ReverseInfiniteScroller: FC<ReverseInfiniteScrollerProps> = (props) => {
         {items.map((item, index) => (
           <div
             key={item.id}
-            id={id + "_" + item.id}
+            id={index + "_" + id + "_" + item.id}
             className={ITEM_CLASSNAME}
             style={{ minHeight: item.estimateSize + "px" }}
           >

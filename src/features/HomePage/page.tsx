@@ -1,6 +1,6 @@
 import { InferGetServerSidePropsType } from "next";
 import { FC, ReactNode, useState } from "react";
-import BaseLayout from "@/layouts/BaseLayout";
+import SEOLayout from "@/layouts/SEOLayout";
 import ReverseInfiniteScroller from "@/components/ReverseInfiniteScroller";
 import { randomId } from "@/utils/str";
 import { getServerSideProps } from "./props";
@@ -20,7 +20,7 @@ export const Page: FC<PageProps> = (props) => {
   };
 
   return (
-    <BaseLayout title="Next App">
+    <SEOLayout title="Next App">
       <ReverseInfiniteScroller
         items={data}
         width="200px"
@@ -32,7 +32,7 @@ export const Page: FC<PageProps> = (props) => {
         loadingComponent={<p>Loading...</p>}
         endComponent={<p>END</p>}
       />
-    </BaseLayout>
+    </SEOLayout>
   );
 };
 

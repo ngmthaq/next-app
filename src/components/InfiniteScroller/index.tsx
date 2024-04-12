@@ -63,10 +63,10 @@ const InfiniteScroller: FC<InfiniteScrollerProps> = (props) => {
         className={WRAPPER_CLASSNAME}
         style={{ width: "100%", minHeight: wrapperHeight + "px" }}
       >
-        {items.map((item) => (
+        {items.map((item, index) => (
           <div
             key={item.id}
-            id={id + "_" + item.id}
+            id={index + "_" + id + "_" + item.id}
             className={ITEM_CLASSNAME}
             style={{ minHeight: item.estimateSize + "px" }}
           >
