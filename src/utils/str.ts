@@ -1,3 +1,5 @@
+import { REGEX } from "@/configs/constants";
+
 export function randomString(length: number = 16) {
   let result = "";
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -13,4 +15,8 @@ export function randomString(length: number = 16) {
 export function randomId() {
   const str = randomString(16);
   return Date.now() + "_" + str;
+}
+
+export function validateEmail(email: string) {
+  return String(email).toLowerCase().match(REGEX.email);
 }
