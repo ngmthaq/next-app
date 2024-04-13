@@ -2,10 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC, FormEventHandler, useId } from "react";
 import { REGEX } from "@/configs/constants";
+import { useLocale } from "@/hooks/useLocale";
 import CSRLayout from "@/layouts/CSRLayout";
 import { PageProps } from "./props";
 
 export const Page: FC<PageProps> = () => {
+  const { t } = useLocale();
+
   const emailId = useId();
   const pwdId = useId();
 
@@ -17,9 +20,9 @@ export const Page: FC<PageProps> = () => {
   const handleValidateEmail: FormEventHandler<HTMLInputElement> = (event) => {
     const input = event.currentTarget;
     if (input.validity.valueMissing) {
-      input.setCustomValidity("Vui lòng không bỏ trống trường này");
+      input.setCustomValidity(t("validation_required"));
     } else if (input.validity.typeMismatch) {
-      input.setCustomValidity("Vui lòng nhập đúng định dạng email. Ví dụ: example@gmail.com");
+      input.setCustomValidity(t("validation_email"));
     }
   };
 
@@ -31,9 +34,9 @@ export const Page: FC<PageProps> = () => {
   const handleValidatePassword: FormEventHandler<HTMLInputElement> = (event) => {
     const input = event.currentTarget;
     if (input.validity.valueMissing) {
-      input.setCustomValidity("Vui lòng không bỏ trống trường này");
+      input.setCustomValidity(t("validation_required"));
     } else if (input.validity.patternMismatch) {
-      input.setCustomValidity("Độ dài mật khẩu phải từ 8 đến 32 ký tự");
+      input.setCustomValidity(t("validation_password"));
     }
   };
 
@@ -43,7 +46,7 @@ export const Page: FC<PageProps> = () => {
   };
 
   return (
-    <CSRLayout title="Đăng nhập với tư cách quản trị viên">
+    <CSRLayout title={t("title_admin_cms_login_page")}>
       <section className="min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
         <div className="container">
           <div className="row justify-content-center">
@@ -57,13 +60,13 @@ export const Page: FC<PageProps> = () => {
               <div className="card mb-3 box-shadow">
                 <div className="card-body">
                   <div className="pt-4 pb-2">
-                    <h5 className="card-title text-center pb-0 fs-4">Đăng nhập</h5>
-                    <p className="text-center small">Điền thông tin email và mật khẩu để đăng nhập</p>
+                    <h5 className="card-title text-center pb-0 fs-4">{t("login")}</h5>
+                    <p className="text-center small">{t("enter_credentials")}</p>
                   </div>
                   <form className="row g-3" onSubmit={handleSubmit}>
                     <div className="col-12">
                       <label htmlFor={emailId} className="form-label">
-                        Email
+                        {t("email")}
                       </label>
                       <input
                         required
@@ -78,7 +81,7 @@ export const Page: FC<PageProps> = () => {
                     </div>
                     <div className="col-12">
                       <label htmlFor={pwdId} className="form-label">
-                        Mật khẩu
+                        {t("password")}
                       </label>
                       <input
                         required
@@ -102,18 +105,18 @@ export const Page: FC<PageProps> = () => {
                           id="rememberMe"
                         />
                         <label className="form-check-label user-select-none" htmlFor="rememberMe">
-                          Ghi nhớ thông tin đăng nhập
+                          {t("remember_credentials")}
                         </label>
                       </div>
                     </div>
                     <div className="col-12 mb-2">
                       <button className="btn btn-primary w-100" type="submit">
-                        Đăng nhập
+                        {t("login")}
                       </button>
                     </div>
                     <div className="col-12">
-                      <p className="small mb-0 text-center">
-                        Bạn chưa có tài khoản? <br /> Hãy liên hệ với quản trị viên để được cấp tài khoản
+                      <p className="small mb-0 text-center" style={{ whiteSpace: "pre-line" }}>
+                        {t("contact_to_create_admin_account")}
                       </p>
                     </div>
                   </form>
@@ -122,7 +125,7 @@ export const Page: FC<PageProps> = () => {
               <div className="credits">
                 <a
                   href="https://bootstrapmade.com/bootstrap-admin-templates/"
-                  title="Bản quyền giao diện thuộc BootstrapMade"
+                  title={t("bootstrap_made_copyright")}
                   target="_blank"
                 >
                   BootstrapMade ©️

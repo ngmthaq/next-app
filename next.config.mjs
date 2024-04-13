@@ -1,4 +1,4 @@
-const LOCALES = ["vi"];
+const LOCALES = ["vi", "en"];
 const DEFAULT_LOCALE = "vi";
 
 /** @type {import('next').NextConfig} */
