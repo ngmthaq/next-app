@@ -1,10 +1,9 @@
 import Head from "next/head";
-import { FC, Fragment, ReactNode } from "react";
+import { FC, Fragment } from "react";
 import NoSSR from "@/components/NoSSR";
+import { CSRLayoutProps } from "../CSRLayout";
 
-export type SEOLayoutProps = {
-  children: ReactNode;
-  title: string;
+export type SEOLayoutProps = CSRLayoutProps & {
   description?: string;
   image?: string;
   author?: string;
