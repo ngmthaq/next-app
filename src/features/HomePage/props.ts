@@ -1,4 +1,4 @@
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { HomePageProps, Repo } from "./types";
 
 export const getServerSideProps = (async () => {
@@ -6,3 +6,5 @@ export const getServerSideProps = (async () => {
   const repo: Repo = await res.json();
   return { props: { repo } };
 }) satisfies GetServerSideProps<HomePageProps>;
+
+export type PageProps = InferGetServerSidePropsType<typeof getServerSideProps>;

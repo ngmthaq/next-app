@@ -1,11 +1,8 @@
-import { InferGetServerSidePropsType } from "next";
 import { FC, ReactNode, useState } from "react";
 import SEOLayout from "@/layouts/SEOLayout";
 import ReverseInfiniteScroller from "@/components/ReverseInfiniteScroller";
 import { randomId } from "@/utils/str";
-import { getServerSideProps } from "./props";
-
-export type PageProps = InferGetServerSidePropsType<typeof getServerSideProps>;
+import { PageProps } from "./props";
 
 export const Page: FC<PageProps> = (props) => {
   const { repo } = props;

@@ -3,8 +3,9 @@ import Link from "next/link";
 import { FC, FormEventHandler, useId } from "react";
 import { REGEX } from "@/configs/constants";
 import CSRLayout from "@/layouts/CSRLayout";
+import { PageProps } from "./props";
 
-export const Page: FC = () => {
+export const Page: FC<PageProps> = () => {
   const emailId = useId();
   const pwdId = useId();
 
@@ -134,5 +135,3 @@ export const Page: FC = () => {
     </CSRLayout>
   );
 };
-
-const MIN_PASSWORD_LENGTH = 8;
