@@ -1,4 +1,4 @@
-export type EventBusNameType = "";
+export type EventBusNameType = "NEXT_CHANGE_THEME";
 
 export type EventBusCallbackType<T> = (params: T) => void;
 

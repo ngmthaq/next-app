@@ -10,7 +10,10 @@ const openSansFont = Open_Sans({ subsets: ["latin"] });
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   const { initTheme } = useTheme();
 
-  useEffect(() => initTheme(), []);
+  useEffect(() => {
+    initTheme();
+    import("bootstrap");
+  }, []);
 
   return (
     <main id="app" className={openSansFont.className}>

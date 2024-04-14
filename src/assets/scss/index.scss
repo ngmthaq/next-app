@@ -1,5 +1,6 @@
 @import "./configs";
 @import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "./template.scss";
 
 * {
   font-optical-sizing: auto;
@@ -27,4 +28,12 @@
   border: none;
   box-shadow: $box-shadow;
   border-radius: 6px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-auto {
+  cursor: auto;
 }
