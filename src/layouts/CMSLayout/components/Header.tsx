@@ -20,7 +20,7 @@ const Header: FC = () => {
         </button>
         <a href="/" target="_blank" className="logo d-flex align-items-center gap-1">
           <Image src="/favicon.ico" width={28} height={30} alt="logo" />
-          <span className={`d-none d-lg-block text-${theme === "light" ? "dark" : "light"}`}>AdminCMS</span>
+          <span className={`text-${theme === "light" ? "dark" : "light"}`}>AdminCMS</span>
         </a>
       </div>
       <nav className="header-nav ms-auto">

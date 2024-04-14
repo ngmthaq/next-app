@@ -10,10 +10,12 @@ const CMSLayout: FC<CMSLayoutProps> = (props) => {
 
   return (
     <CSRLayout title={title}>
-      <Header />
-      <div className="d-flex">
-        <Sidebar />
-        <section id="main">{children}</section>
+      <div id="cms-layout">
+        <Header />
+        <div className="d-flex">
+          <Sidebar />
+          <section id="main">{children}</section>
+        </div>
       </div>
     </CSRLayout>
   );
