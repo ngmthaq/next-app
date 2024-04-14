@@ -1,6 +1,6 @@
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { DEFAULT_LOCALE } from "../next.config.mjs";
+import { DEFAULT_LOCALE } from "next.config";
 
 /**
  * Next.js Middleware

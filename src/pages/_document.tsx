@@ -1,9 +1,9 @@
-import { FC } from "react";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { Html, Head, Main, NextScript } from "next/document";
-import { DEFAULT_LOCALE } from "../../next.config.mjs";
+import { DEFAULT_LOCALE } from "next.config";
+import { FC } from "react";
 
-export const getServerSideProps = (async ({ locale }) => {
+export const getServerSideProps = (async ({ req, locale }) => {
   return {
     props: {
       locale: locale || DEFAULT_LOCALE,

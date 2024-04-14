@@ -3,11 +3,13 @@ import Link from "next/link";
 import { FC, FormEventHandler, useId } from "react";
 import { REGEX } from "@/configs/constants";
 import { useLocale } from "@/hooks/useLocale";
+import { useTheme } from "@/hooks/useTheme";
 import CSRLayout from "@/layouts/CSRLayout";
 import { PageProps } from "./props";
 
 export const Page: FC<PageProps> = () => {
   const { t } = useLocale();
+  const { theme, toggleTheme } = useTheme();
 
   const emailId = useId();
   const pwdId = useId();
@@ -79,7 +81,7 @@ export const Page: FC<PageProps> = () => {
                         onInvalid={handleValidateEmail}
                       />
                     </div>
-                    <div className="col-12">
+                    <div className="col-12 mb-1">
                       <label htmlFor={pwdId} className="form-label">
                         {t("password")}
                       </label>
@@ -95,20 +97,6 @@ export const Page: FC<PageProps> = () => {
                         onInvalid={handleValidatePassword}
                       />
                     </div>
-                    <div className="col-12">
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          name="remember"
-                          value="true"
-                          id="rememberMe"
-                        />
-                        <label className="form-check-label user-select-none" htmlFor="rememberMe">
-                          {t("remember_credentials")}
-                        </label>
-                      </div>
-                    </div>
                     <div className="col-12 mb-2">
                       <button className="btn btn-primary w-100" type="submit">
                         {t("login")}
@@ -121,6 +109,20 @@ export const Page: FC<PageProps> = () => {
                     </div>
                   </form>
                 </div>
+              </div>
+              <div className="d-flex align-items-center gap-1 mb-3">
+                <i className="bi bi-sun-fill"></i>
+                <div className="form-check form-switch" style={{ paddingLeft: "2.7rem" }}>
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="switchTheme"
+                    checked={theme === "dark"}
+                    onChange={toggleTheme}
+                  />
+                </div>
+                <i className="bi bi-moon-fill"></i>
               </div>
               <div className="credits">
                 <a

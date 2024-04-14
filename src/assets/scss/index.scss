@@ -25,5 +25,6 @@
 
 .card.box-shadow {
   border: none;
-  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+  box-shadow: $box-shadow;
+  border-radius: 6px;
 }

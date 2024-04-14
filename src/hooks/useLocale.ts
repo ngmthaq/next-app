@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
+import { DEFAULT_LOCALE, LOCALES } from "next.config";
 import locales from "@/locales";
-import { DEFAULT_LOCALE, LOCALES } from "../../next.config.mjs";
 
 export function useLocale() {
   const router = useRouter();
