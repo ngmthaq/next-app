@@ -41,4 +41,3 @@ export function useTheme() {
 
   return { theme, changeTheme, initTheme, toggleTheme, getTextClassName };
 }
-

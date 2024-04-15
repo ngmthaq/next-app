@@ -32,4 +32,3 @@ const CompressSidebarItem: FC<CompressSidebarItemProps> = ({ id, bsIcon, title, 
 };
 
 export default CompressSidebarItem;
-

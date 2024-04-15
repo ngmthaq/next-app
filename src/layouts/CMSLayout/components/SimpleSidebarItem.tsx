@@ -20,4 +20,3 @@ const SimpleSidebarItem: FC<SimpleSidebarItemProps> = ({ path, bsIcon, title }) 
 };
 
 export default SimpleSidebarItem;
-

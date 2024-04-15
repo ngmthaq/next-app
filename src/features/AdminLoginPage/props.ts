@@ -6,4 +6,3 @@ export const getServerSideProps = (async () => {
 }) satisfies GetServerSideProps<TODO>;
 
 export type PageProps = InferGetServerSidePropsType<typeof getServerSideProps>;
-

@@ -5,4 +5,3 @@ import * as ObjUtils from "./obj";
 import * as StringUtils from "./str";
 
 export { ArrayUtils, DateTimeUtils, NumberUtils, ObjUtils, StringUtils };
-

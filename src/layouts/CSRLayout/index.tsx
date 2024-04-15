@@ -27,4 +27,3 @@ const CSRLayout: FC<CSRLayoutProps> = (props) => {
 };
 
 export default CSRLayout;
-

@@ -84,4 +84,3 @@ const SEOLayout: FC<SEOLayoutProps> = (props) => {
 };
 
 export default SEOLayout;
-
