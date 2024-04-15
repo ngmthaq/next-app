@@ -6,10 +6,10 @@ import * as FirebaseAdmin from "./firebaseAdmin";
 import EventBus from "./eventBus";
 
 // Import Types
-import type { TODO, Nullable } from "./types";
+import type { TODO, Nullable, FileResponse } from "./types";
 
 // Export Normal Data
 export { Constants, Paths, EventBus, FirebaseClient, FirebaseAdmin };
 
 // Export Types
-export type { TODO, Nullable };
+export type { TODO, Nullable, FileResponse };

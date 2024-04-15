@@ -1,10 +1,12 @@
 import { GetServerSidePropsContext } from "next";
 import nookies from "nookies";
-import { File } from "@google-cloud/storage";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getStorage, getDownloadURL } from "firebase-admin/storage";
 import { getFirestore } from "firebase-admin/firestore";
 import { getAuth } from "firebase-admin/auth";
+import { File } from "@google-cloud/storage";
+import { FileSystemUtils } from "@/utils";
+import { FileResponse } from "./types";
 
 const privateKey = process.env["FIREBASE_ADMIN_CREDENTIALS_PRIVATE_KEY"];
 const clientEmail = process.env["FIREBASE_ADMIN_CREDENTIALS_CLIENT_EMAIL"];
@@ -37,12 +39,13 @@ export const getBucketFile = (bucketName: string, fileName: string) => {
   const bucket = storage.bucket(bucketName);
   return bucket.file(fileName);
 };
-export const getFile = async (bucketFile: File, responseType: "blob" | "url" = "url") => {
+export const getFile = async (bucketFile: File, responseType: FileResponse = "url") => {
   const url = await getDownloadURL(bucketFile);
   if (responseType === "url") return url;
   const response = await fetch(url);
   const blob = await response.blob();
-  return blob;
+  if (responseType === "blob") return blob;
+  return FileSystemUtils.convertBlobToBase64(blob);
 };
 
 // Auth

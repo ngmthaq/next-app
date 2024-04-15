@@ -3,6 +3,8 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, onAuthStateChanged, User } from "firebase/auth";
 import { deleteObject, getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+import { FileSystemUtils } from "@/utils";
+import { FileResponse } from "./types";
 
 // Configs
 const firebaseConfig = {
@@ -27,12 +29,13 @@ export const storage = getStorage(app);
 export const storageRef = ref(storage);
 export const getFolderRef = (folder: string) => ref(storageRef, folder);
 export const uploadFile = async (file: File | Blob, path: string) => uploadBytes(getFolderRef(path), file);
-export const getFile = async (fullPath: string, responseType: "blob" | "url" = "url") => {
+export const getFile = async (fullPath: string, responseType: FileResponse = "url") => {
   const url = await getDownloadURL(ref(storage, fullPath));
   if (responseType === "url") return url;
   const response = await fetch(url);
   const blob = await response.blob();
-  return blob;
+  if (responseType === "blob") return blob;
+  return FileSystemUtils.convertBlobToBase64(blob);
 };
 export const deleteFile = async (fullPath: string) => {
   const imageRef = ref(storage, fullPath);
