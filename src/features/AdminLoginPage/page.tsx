@@ -4,6 +4,7 @@ import { FC, FormEventHandler, useId } from "react";
 import { Constants, Paths } from "@/configs";
 import { CSRLayout } from "@/layouts";
 import { useLocale, useTheme } from "@/hooks";
+import { FirebaseAuthServices } from "@/firebase/services";
 import { PageProps } from "./props";
 
 export const Page: FC<PageProps> = () => {
@@ -43,7 +44,8 @@ export const Page: FC<PageProps> = () => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    console.log("Login");
+    const formData = new FormData(event.currentTarget);
+    FirebaseAuthServices.login(formData);
   };
 
   return (

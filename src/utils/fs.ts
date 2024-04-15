@@ -5,4 +5,3 @@ export function convertBlobToBase64(blob: Blob): Promise<string> {
     reader.readAsDataURL(blob);
   });
 }
-

@@ -5,7 +5,7 @@ export const WEB = {
 };
 
 export const API = {
-  hello: "/api/hello",
+  login: "/api/auth/login",
 };
 
 export const STATICS = {
