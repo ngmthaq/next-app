@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { FC, Fragment } from "react";
+import { Paths } from "@/configs";
 import { NoSSR } from "@/components";
 import { CSRLayoutProps } from "../CSRLayout";
 
@@ -18,8 +19,8 @@ const SEOLayout: FC<SEOLayoutProps> = (props) => {
     <Fragment>
       <Head>
         <title>{title}</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="icon" href={Paths.STATICS.favicon} />
+        <link rel="apple-touch-icon" href={Paths.STATICS.favicon} />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />

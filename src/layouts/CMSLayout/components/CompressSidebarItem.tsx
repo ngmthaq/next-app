@@ -13,14 +13,14 @@ const CompressSidebarItem: FC<CompressSidebarItemProps> = ({ id, bsIcon, title, 
     <Fragment>
       <a
         className="nav-link collapsed user-select-none cursor-pointer"
-        data-bs-target={`#${id}`}
+        data-bs-target={`#CompressSidebarItem_${id}`}
         data-bs-toggle="collapse"
       >
         <i className={bsIcon}></i>
         <span>{title}</span>
         <i className="bi bi-chevron-down ms-auto"></i>
       </a>
-      <ul id={id} className="nav-content collapse" data-bs-parent="#sidebar-nav">
+      <ul id={`CompressSidebarItem_${id}`} className="nav-content collapse" data-bs-parent="#sidebar-nav">
         {items.map((item, index) => (
           <li key={index}>
             <SimpleSidebarItem {...item} bsIcon="bi bi-circle" />
@@ -32,3 +32,4 @@ const CompressSidebarItem: FC<CompressSidebarItemProps> = ({ id, bsIcon, title, 
 };
 
 export default CompressSidebarItem;
+

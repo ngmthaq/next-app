@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FC, Fragment } from "react";
+import { Paths } from "@/configs";
 import { useTheme } from "@/hooks";
 
 const Message: FC = () => {
@@ -14,7 +15,7 @@ const Message: FC = () => {
       <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages" style={{ minWidth: "400px" }}>
         <li className="message-item">
           <a href="#" className={getTextClassName()}>
-            <Image src="/favicon.ico" alt="avatar" width={30} height={30} className="rounded-circle" />
+            <Image src={Paths.STATICS.favicon} alt="avatar" width={30} height={30} className="rounded-circle" />
             <div>
               <h4>Maria Hudson</h4>
               <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -27,7 +28,7 @@ const Message: FC = () => {
         </li>
         <li className="message-item">
           <a href="#" className={getTextClassName()}>
-            <Image src="/favicon.ico" alt="avatar" width={30} height={30} className="rounded-circle" />
+            <Image src={Paths.STATICS.favicon} alt="avatar" width={30} height={30} className="rounded-circle" />
             <div>
               <h4>Anna Nelson</h4>
               <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -40,7 +41,7 @@ const Message: FC = () => {
         </li>
         <li className="message-item">
           <a href="#" className={getTextClassName()}>
-            <Image src="/favicon.ico" alt="avatar" width={30} height={30} className="rounded-circle" />
+            <Image src={Paths.STATICS.favicon} alt="avatar" width={30} height={30} className="rounded-circle" />
             <div>
               <h4>David Muldon</h4>
               <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>

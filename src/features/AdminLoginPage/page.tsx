@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC, FormEventHandler, useId } from "react";
-import { Constants } from "@/configs";
+import { Constants, Paths } from "@/configs";
 import { CSRLayout } from "@/layouts";
 import { useLocale, useTheme } from "@/hooks";
 import { PageProps } from "./props";
@@ -53,8 +53,11 @@ export const Page: FC<PageProps> = () => {
           <div className="row justify-content-center">
             <div className="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
               <div className="d-flex justify-content-center pb-4">
-                <Link href="/" className="logo d-flex align-items-center w-auto gap-3 text-decoration-none">
-                  <Image width={40} height={40} src="/favicon.ico" alt="Logo" />
+                <Link
+                  href={Paths.WEB.home}
+                  className="logo d-flex align-items-center w-auto gap-3 text-decoration-none"
+                >
+                  <Image width={40} height={40} src={Paths.STATICS.favicon} alt="Logo" />
                   <h1 className="d-none d-lg-block mb-0">AdminCMS</h1>
                 </Link>
               </div>
@@ -124,11 +127,7 @@ export const Page: FC<PageProps> = () => {
                 <i className="bi bi-moon-fill"></i>
               </div>
               <div className="credits">
-                <a
-                  href="https://bootstrapmade.com/bootstrap-admin-templates/"
-                  title={t("bootstrap_made_copyright")}
-                  target="_blank"
-                >
+                <a href={Paths.OTHERS.bootstrapMade} title={t("bootstrap_made_copyright")} target="_blank">
                   BootstrapMade ©️
                 </a>
               </div>
@@ -139,3 +138,4 @@ export const Page: FC<PageProps> = () => {
     </CSRLayout>
   );
 };
+

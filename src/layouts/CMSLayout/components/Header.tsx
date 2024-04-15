@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FC } from "react";
+import { Paths } from "@/configs";
 import { useTheme } from "@/hooks";
 import Notification from "./Notification";
 import Message from "./Message";
@@ -19,7 +20,7 @@ const Header: FC = () => {
           <i className="bi bi-list "></i>
         </button>
         <a href="/" target="_blank" className="logo d-flex align-items-center gap-1">
-          <Image src="/favicon.ico" width={28} height={30} alt="logo" />
+          <Image src={Paths.STATICS.favicon} width={28} height={30} alt="logo" />
           <span className={getTextClassName()}>AdminCMS</span>
         </a>
       </div>
@@ -46,3 +47,4 @@ const Header: FC = () => {
 };
 
 export default Header;
+
