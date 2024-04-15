@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { FC, Fragment, ReactNode } from "react";
-import NoSSR from "@/components/NoSSR";
+import { NoSSR } from "@/components";
 
 export type CSRLayoutProps = {
   children: ReactNode;

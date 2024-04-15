@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { FC, Fragment } from "react";
-import { useTheme } from "@/hooks/useTheme";
+import { useTheme } from "@/hooks";
 
 const Message: FC = () => {
-  const { theme } = useTheme();
+  const { getTextClassName } = useTheme();
 
   return (
     <Fragment>
@@ -13,7 +13,7 @@ const Message: FC = () => {
       </a>
       <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages" style={{ minWidth: "400px" }}>
         <li className="message-item">
-          <a href="#" className={`text-${theme === "dark" ? "light" : "dark"}`}>
+          <a href="#" className={getTextClassName()}>
             <Image src="/favicon.ico" alt="avatar" width={30} height={30} className="rounded-circle" />
             <div>
               <h4>Maria Hudson</h4>
@@ -26,7 +26,7 @@ const Message: FC = () => {
           <hr className="dropdown-divider" />
         </li>
         <li className="message-item">
-          <a href="#" className={`text-${theme === "dark" ? "light" : "dark"}`}>
+          <a href="#" className={getTextClassName()}>
             <Image src="/favicon.ico" alt="avatar" width={30} height={30} className="rounded-circle" />
             <div>
               <h4>Anna Nelson</h4>
@@ -39,7 +39,7 @@ const Message: FC = () => {
           <hr className="dropdown-divider" />
         </li>
         <li className="message-item">
-          <a href="#" className={`text-${theme === "dark" ? "light" : "dark"}`}>
+          <a href="#" className={getTextClassName()}>
             <Image src="/favicon.ico" alt="avatar" width={30} height={30} className="rounded-circle" />
             <div>
               <h4>David Muldon</h4>
@@ -52,7 +52,7 @@ const Message: FC = () => {
           <hr className="dropdown-divider" />
         </li>
         <li className="dropdown-footer">
-          <a href="#" className={`text-${theme === "dark" ? "light" : "dark"}`}>
+          <a href="#" className={getTextClassName()}>
             Show all messages
           </a>
         </li>
@@ -62,3 +62,4 @@ const Message: FC = () => {
 };
 
 export default Message;
+

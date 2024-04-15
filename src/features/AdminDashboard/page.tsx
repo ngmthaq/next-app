@@ -1,5 +1,5 @@
 import { FC } from "react";
-import CMSLayout from "@/layouts/CMSLayout";
+import { CMSLayout } from "@/layouts";
 import { PageProps } from "./props";
 
 export const Page: FC<PageProps> = () => {

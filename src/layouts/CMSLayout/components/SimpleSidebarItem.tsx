@@ -1,6 +1,6 @@
-import { useTheme } from "@/hooks/useTheme";
 import Link from "next/link";
 import { FC } from "react";
+import { useTheme } from "@/hooks";
 
 export type SimpleSidebarItemProps = {
   path: string;
@@ -9,10 +9,10 @@ export type SimpleSidebarItemProps = {
 };
 
 const SimpleSidebarItem: FC<SimpleSidebarItemProps> = ({ path, bsIcon, title }) => {
-  const { theme } = useTheme();
+  const { getTextClassName } = useTheme();
 
   return (
-    <Link className={`nav-link collapsed text-${theme === "dark" ? "light" : "dark"}`} href={path}>
+    <Link className={`nav-link collapsed ${getTextClassName()}`} href={path}>
       <i className={bsIcon}></i>
       <span>{title}</span>
     </Link>
@@ -20,3 +20,4 @@ const SimpleSidebarItem: FC<SimpleSidebarItemProps> = ({ path, bsIcon, title }) 
 };
 
 export default SimpleSidebarItem;
+

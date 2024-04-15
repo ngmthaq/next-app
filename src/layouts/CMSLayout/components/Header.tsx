@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { FC } from "react";
-import { useTheme } from "@/hooks/useTheme";
+import { useTheme } from "@/hooks";
 import Notification from "./Notification";
 import Message from "./Message";
 import Profile from "./Profile";
 
 const Header: FC = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, getTextClassName } = useTheme();
 
   const handleToggleSidebar = () => {
     document.querySelector("body")?.classList.toggle("toggle-sidebar");
@@ -20,7 +20,7 @@ const Header: FC = () => {
         </button>
         <a href="/" target="_blank" className="logo d-flex align-items-center gap-1">
           <Image src="/favicon.ico" width={28} height={30} alt="logo" />
-          <span className={`text-${theme === "light" ? "dark" : "light"}`}>AdminCMS</span>
+          <span className={getTextClassName()}>AdminCMS</span>
         </a>
       </div>
       <nav className="header-nav ms-auto">

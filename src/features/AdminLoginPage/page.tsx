@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC, FormEventHandler, useId } from "react";
-import { REGEX } from "@/configs/constants";
-import { useLocale } from "@/hooks/useLocale";
-import { useTheme } from "@/hooks/useTheme";
-import CSRLayout from "@/layouts/CSRLayout";
+import { Constants } from "@/configs";
+import { CSRLayout } from "@/layouts";
+import { useLocale, useTheme } from "@/hooks";
 import { PageProps } from "./props";
 
 export const Page: FC<PageProps> = () => {
@@ -92,7 +91,7 @@ export const Page: FC<PageProps> = () => {
                         name="password"
                         className="form-control"
                         placeholder="************"
-                        pattern={REGEX.password.source}
+                        pattern={Constants.REGEX.password.source}
                         onChange={handleChangePassword}
                         onInvalid={handleValidatePassword}
                       />

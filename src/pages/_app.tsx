@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
 import { AppProps } from "next/app";
 import { Open_Sans } from "next/font/google";
-import { useTheme } from "../hooks/useTheme";
+import { useTheme } from "@/hooks";
 import "bootstrap-icons/font/bootstrap-icons.scss";
 import "@/assets/scss/index.scss";
 

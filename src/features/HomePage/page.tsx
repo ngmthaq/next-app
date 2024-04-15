@@ -1,7 +1,7 @@
 import { FC, ReactNode, useState } from "react";
-import SEOLayout from "@/layouts/SEOLayout";
-import ReverseInfiniteScroller from "@/components/ReverseInfiniteScroller";
-import { randomId } from "@/utils/str";
+import { SEOLayout } from "@/layouts";
+import { ReverseInfiniteScroller } from "@/components";
+import { StringUtils } from "@/utils";
 import { PageProps } from "./props";
 
 export const Page: FC<PageProps> = (props) => {
@@ -10,7 +10,7 @@ export const Page: FC<PageProps> = (props) => {
   const [data, setData] = useState(infiniteScrollerData);
 
   const handleLoadMore = () => {
-    setData((state) => [...state, ...infiniteScrollerData.map((d) => ({ ...d, id: randomId() }))]);
+    setData((state) => [...state, ...infiniteScrollerData.map((d) => ({ ...d, id: StringUtils.randomId() }))]);
   };
 
   return (
@@ -56,7 +56,8 @@ const infiniteScrollerData = [
   "saab",
   "toyota",
 ].map((d) => ({
-  id: randomId(),
+  id: StringUtils.randomId(),
   estimateSize: 20,
   props: { children: d },
 }));
+

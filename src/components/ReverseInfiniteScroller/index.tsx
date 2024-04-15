@@ -1,5 +1,5 @@
 import { FC, Fragment, ReactNode, useEffect, useId, useRef } from "react";
-import { useFirstRender } from "@/hooks/useFirstRender";
+import { useFirstRender } from "@/hooks";
 
 export type ReverseInfiniteScrollerItem = {
   id: string;
