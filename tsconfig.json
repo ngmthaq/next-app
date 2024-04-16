@@ -17,6 +17,6 @@
       "next.config": ["./next.config.mjs"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "eslint.config.mjs", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

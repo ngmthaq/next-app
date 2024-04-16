@@ -6,12 +6,8 @@
     "dev": "npm run format && next dev",
     "build": "npm run lint && next build",
     "start": "next start",
-    "lint": "next lint && prettier . --check",
-    "format": "prettier . --write",
-    "prepare": "husky"
-  },
-  "lint-staged": {
-    "**/*": "npx lint"
+    "lint": "prettier . --check",
+    "format": "prettier . --write"
   },
   "dependencies": {
     "@google-cloud/storage": "^7.9.0",
@@ -45,11 +41,9 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.34.1",
     "globals": "^15.0.0",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "sass": "^1.75.0",
-    "typescript": "*",
+    "typescript": "5",
     "typescript-eslint": "^7.6.0"
   }
 }

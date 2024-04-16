@@ -1,9 +1,8 @@
 import globals from "globals";
-import tseslint from "typescript-eslint";
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 import eslintConfigPrettier from "eslint-config-prettier";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
-
+import tseslint from "typescript-eslint";
 import path from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
@@ -21,6 +20,14 @@ const configs = [
   pluginReactConfig,
   eslintConfigPrettier,
   eslintPluginPrettierRecommended,
+  {
+    ignores: [],
+  },
+  {
+    rules: {
+      "react-hooks/exhaustive-deps": ["off"],
+    },
+  },
 ];
 
 export default configs;
